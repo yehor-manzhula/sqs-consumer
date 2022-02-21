@@ -353,7 +353,7 @@ export class Consumer extends EventEmitter {
         }
         return;
       }).then(() => {
-        this.currentPollingTimeoutId = setTimeout(this.poll, currentPollingTimeout);
+        this.currentPollingTimeoutId = setTimeout(() => this.poll, currentPollingTimeout);
       }).catch((err) => {
         this.emit('error', err);
       });
